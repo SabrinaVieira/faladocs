@@ -193,31 +193,37 @@ Sempre consulte o  **rules/global_rules.md** antes de sugerir algo, e matenha as
 Se necessario separe por  responsabilidades. Os testes automatizados devem residir exclusivamente dentro do diretório tests/, tests/units e assim por diante
 
 ### 📄 Prompt 29
-o arquivo recem criado para atender rt04_chunk_text.md, possui o memso nome de arquivo de teste que deveria criado para atender rt03_extract_text_from_pdf.md
+o arquivo recem criado para atender **rt04_chunk_text.md**, possui o memso nome de arquivo de teste que deveria criado para atender rt03_extract_text_from_pdf.md
 e ambos deveriam ser salvos em ser salvo em tests/unit/services/test_document_service.py
 
 ### 📄 Prompt 30
 como rdar este teste com salvamento do resultado em um arquivo de log na pasta logs
 se eu rodar este teste agora irá dar erro, sim ou não
 
+pytest > logs/test_results_$(date +%Y%m%d_%H%M%S).log 2>&1
+
 
 ### 📄 Prompt 31
 utilize conventional commites, e escreva um commit resumido para o que fizemos desde o ultimo commit nesta branch
 
 
-### 📄 Prompt
+### 📄 Prompt 32
+Agora, escreva a implementação em **rt04_chunk_text.md**, para fazer esses testes passarem. E explique os passos do seu raciocinio
+Sempre consulte o  **rules/global_rules.md** antes de sugerir algo, e matenha as boas práticas conforme **rt01_setup_project_structure.md** e clean Architecture
+
+### 📄 Prompt 33
+1 - utilize conventional commites, e escreva um commit curto para o que fizemos desde o ultimo commit nesta branch, a mensagem não deve ultrapassar 50 caracteres
+2 me explique como juntar tudo desenvolvido na atual branch na master sem apagar ela
+
+feat: Implement RT04 text chunking service
+
+### 📄 Prompt 34
 
 
-### 📄 Prompt
+### 📄 Prompt 35
 
 
-### 📄 Prompt
-
-
-### 📄 Prompt
-
-
-### 📄 Prompt
+### 📄 Prompt 36
 
 
 ### 📄 Prompt

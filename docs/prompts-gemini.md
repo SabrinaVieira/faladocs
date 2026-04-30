@@ -158,3 +158,48 @@ Lembre-se sempre consulte o diretório /rules/global_rules.md antes
 ### 📄 Prompt 20
 rodei os teste com ytest > logs/test_results_$(date +%Y%m%d_%H%M%S).log 2>&1, e o @test_results_20260429_190241.log foi retornado, avalie o e me diga o que esta sendo apontado de erro e como corrigir para que os teste passem
 
+### 📄 Prompt 21
+Sempre consulte o  **rules/global_rules.md** antes de sugerir algo,
+matenha as boas práticas conforme **rt01_setup_project_structure.md** e clean Architecture
+com base na  especificação **rt03_extract_text_from_pdf.md**, escreva os testes unitários (pytest) que garantirão que este contrato seja cumprido. Utilize mocks para isolar chamadas de rede se necessario.
+se necessario Separe por  Responsabilidades:
+Os testes automatizados devem residir exclusivamente dentro do diretório tests/, tests/units e assim por diante
+
+
+### 📄 Prompt 22
+como rdar este teste com salvamento do resultado em um arquivo de log na pasta logs
+se eu rodar este teste agora irá dar erro, sim ou não
+
+
+### 📄 Prompt 23
+utilize conventional commites para o que fizemos ate agora
+
+### 📄 Prompt 24
+Agora, escreva a implementação em rt03_extract_text_from_pdf.md, para fazer esses testes passarem. Lembre-se sempre consulte rules/global_rules.md antes de implementar algo matenhas as boas práticas conforme **** e clean Architecture com base na especificação rt03_extract_text_from_pdf.md
+
+### 📄 Prompt 25
+
+
+### 📄 Prompt
+
+
+### 📄 Prompt
+
+
+### 📄 Prompt
+
+
+### 📄 Prompt
+
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+### 📄 Prompt
+
+
+### 📄 Prompt

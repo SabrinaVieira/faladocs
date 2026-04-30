@@ -100,7 +100,61 @@ Assets: Considere os documentos escopo-mvp.md e backlog.md previamente fornecido
 Resposta: Retorne o conteúdo em markdown de cada um dos arquivos gerados, separados por blocos de código, prontos para serem salvos na pasta docs/rules/ do projeto.
 
 ### 📄 Prompt 8
+existem muitos difffs e muitas camadas da aplicação ainda sem commites, utilize conventional commites para cada uma da camadas em separado e faça os commites para mim
 
 ### 📄 Prompt 9
+Sempre consulte o diretório /rules/global_rules.md antes de para garantir acertividade. Se a implementação divergir da spec, priorize a spec ou peça clarificação"
+Com base na  especificação rf01_upload_pdf_document.md, escreva PRIMEIRO os testes unitários (pytest) que garantirão que este contrato seja cumprido. Utilize mocks para isolar chamadas de rede.
+
 
 ### 📄 Prompt 10
+como rdar o teste e enviar para um arquivo de testo do diretorio logs 
+pytest > logs/test_results$(date +%Y%m%d_%H%M%S).log
+
+
+### 📄 Prompt 11
+Sempre consulte o diretório /rules/global_rules.md antes de para garantir acertividade. Se a implementação divergir da spec, priorize a spec ou peça clarificação. escreva a implementação real para fazer esses testes passarem, respeitando as restrições da especificação @rf01_upload_pdf_document.md
+
+### 📄 Prompt 12
+Sempre consulte o diretório /rules/global_rules.md antes 
+Com base na  especificação rf02_submit_user_question.md, escreva PRIMEIRO os testes unitários (pytest) que garantirão que este contrato seja cumprido. Utilize mocks para isolar chamadas de rede.
+
+
+### 📄 Prompt 13
+Como rodar o teste, enviando o resultado do arquivo para o diretorio /logs - versionado com data e hora
+pytest > logs/test_results_$(date +%Y%m%d_%H%M%S).log
+
+
+### 📄 Prompt 14
+escreva a implementação real para fazer esses testes passarem, respeitando as restrições da especificação rf02_submit_user_question.md. 
+Sempre consulte o diretório /rules/global_rules.md antes
+
+
+### 📄 Prompt 15
+Sempre consulte o diretório /rules/global_rules.md antes 
+Com base na  especificação rt01_setup_project_structure.md, escreva PRIMEIRO os testes unitários (pytest) que garantirão que este contrato seja cumprido. Utilize mocks para isolar chamadas de rede.
+
+
+### 📄 Prompt 16
+Como rodar o teste, enviando o resultado do arquivo para o diretorio /logs - versionado com data e hora
+pytest > logs/test_results_$(date +%Y%m%d_%H%M%S).log 2>&1
+
+
+### 📄 Prompt 17
+escreva a implementação real para fazer esses testes passarem, respeitando as restrições da especificação rt01_setup_project_structure.md. 
+Sempre consulte o diretório /rules/global_rules.md antes
+
+
+### 📄 Prompt 18
+Sempre consulte o diretório /rules/global_rules.md antes.
+E com base na  especificação rt02_configure_environment_variables.md, escreva os testes unitários (pytest) que garantirão que este contrato seja cumprido. Utilize mocks para isolar chamadas de rede.
+
+
+### 📄 Prompt 19
+Escreva a implementação real para fazer esses testes passarem, respeitando as restrições da especificação rt02_configure_environment_variables.md 
+Lembre-se sempre consulte o diretório /rules/global_rules.md antes
+
+
+### 📄 Prompt 20
+rodei os teste com ytest > logs/test_results_$(date +%Y%m%d_%H%M%S).log 2>&1, e o @test_results_20260429_190241.log foi retornado, avalie o e me diga o que esta sendo apontado de erro e como corrigir para que os teste passem
+

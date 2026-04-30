@@ -178,6 +178,31 @@ utilize conventional commites para o que fizemos ate agora
 Agora, escreva a implementação em rt03_extract_text_from_pdf.md, para fazer esses testes passarem. Lembre-se sempre consulte rules/global_rules.md antes de implementar algo matenhas as boas práticas conforme **** e clean Architecture com base na especificação rt03_extract_text_from_pdf.md
 
 ### 📄 Prompt 25
+utilize conventional commites para o que fizemos desde o ultimo commit
+
+### 📄 Prompt 26
+me explique como juntar tudo desenvolvido na atual branch na master sem apagar ela
+
+### 📄 Prompt 27
+como criar uma branch para rt04_chunk_text.md
+git checkout -b feat/RT04-chunk-text-service
+
+### 📄 Prompt 28
+Com base no **rt04_chunk_text.md**, escreva os testes unitários (pytest) que garantirão que o contrato seja cumprido. Utilize mocks para isolar chamadas de rede se necessario. E explique os passos do seu raciocinio
+Sempre consulte o  **rules/global_rules.md** antes de sugerir algo, e matenha as boas práticas conforme **rt01_setup_project_structure.md** e clean Architecture
+Se necessario separe por  responsabilidades. Os testes automatizados devem residir exclusivamente dentro do diretório tests/, tests/units e assim por diante
+
+### 📄 Prompt 29
+o arquivo recem criado para atender rt04_chunk_text.md, possui o memso nome de arquivo de teste que deveria criado para atender rt03_extract_text_from_pdf.md
+e ambos deveriam ser salvos em ser salvo em tests/unit/services/test_document_service.py
+
+### 📄 Prompt 30
+como rdar este teste com salvamento do resultado em um arquivo de log na pasta logs
+se eu rodar este teste agora irá dar erro, sim ou não
+
+
+### 📄 Prompt 31
+utilize conventional commites, e escreva um commit resumido para o que fizemos desde o ultimo commit nesta branch
 
 
 ### 📄 Prompt
@@ -194,6 +219,38 @@ Agora, escreva a implementação em rt03_extract_text_from_pdf.md, para fazer es
 
 ### 📄 Prompt
 
+
+### 📄 Prompt
+
+
+### 📄 Prompt
+
+
+### 📄 Prompt
+
+
+### 📄 Prompt
+
+
+### 📄 Prompt
+
+
+### 📄 Prompt
+
+
+### 📄 Prompt
+
+
+### 📄 Prompt
+
+
+### 📄 Prompt
+
+
+### 📄 Prompt
+
+
+### 📄 Prompt
 
 
 ### 📄 Prompt

@@ -10,6 +10,7 @@ import pytest
 # O código-fonte real será importado de 'src', não de 'tests'.
 from src.services.document_service import (
     PDFProcessingError,
+    chunk_text,
     extract_text_from_pdf,
 )
 
@@ -91,3 +92,73 @@ def test_Given_CorruptedPdfBytes_When_extract_text_from_pdf_Then_RaisesPDFProces
         assert "PdfReadError" in caplog.text
 
         mock_pdf_reader_class.assert_called_once_with(corrupted_pdf_bytes)
+
+
+# region: Testes para rt04_chunk_text
+
+# Texto longo para forçar a divisão em múltiplos chunks.
+# Assumindo chunk_size=1000 e chunk_overlap=200 na implementação.
+LONG_TEXT = "Este é um texto muito longo " * 200
+
+# Texto curto, menor que o chunk_size padrão.
+SHORT_TEXT = "Este é um texto curto."
+
+
+def test_chunk_text_Given_long_text_When_chunk_text_is_called_Then_returns_list_of_chunks():
+    """
+    Given: Um texto longo que excede o tamanho do chunk.
+    When: A função chunk_text é chamada.
+    Then: Retorna uma lista de strings (chunks) com mais de um elemento.
+    """
+    # When
+    chunks = chunk_text(LONG_TEXT)
+
+    # Then
+    assert isinstance(chunks, list)
+    assert len(chunks) > 1
+    assert all(isinstance(chunk, str) for chunk in chunks)
+
+
+def test_chunk_text_Given_short_text_When_chunk_text_is_called_Then_returns_list_with_single_chunk():
+    """
+    Given: Um texto curto que não excede o tamanho do chunk.
+    When: A função chunk_text é chamada.
+    Then: Retorna uma lista contendo um único item, que é o texto original.
+    """
+    # When
+    chunks = chunk_text(SHORT_TEXT)
+
+    # Then
+    assert isinstance(chunks, list)
+    assert len(chunks) == 1
+    assert chunks[0] == SHORT_TEXT
+
+
+def test_chunk_text_Given_empty_string_When_chunk_text_is_called_Then_returns_empty_list():
+    """
+    Given: Uma string vazia.
+    When: A função chunk_text é chamada.
+    Then: Retorna uma lista vazia.
+    """
+    # When
+    chunks = chunk_text("")
+
+    # Then
+    assert isinstance(chunks, list)
+    assert len(chunks) == 0
+
+
+def test_chunk_text_Given_non_string_input_When_chunk_text_is_called_Then_raises_TypeError():
+    """
+    Given: Uma entrada que não é uma string (ex: None ou int).
+    When: A função chunk_text é chamada com essa entrada.
+    Then: Um TypeError deve ser levantado.
+    """
+    with pytest.raises(TypeError):
+        chunk_text(None)
+
+    with pytest.raises(TypeError):
+        chunk_text(12345)
+
+
+# endregion

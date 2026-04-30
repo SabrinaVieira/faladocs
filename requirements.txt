@@ -3,3 +3,5 @@ langchain
 langchain-google-genai
 supabase
 python-dotenv
+pydantic
+pydantic-settings

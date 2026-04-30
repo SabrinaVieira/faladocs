@@ -9,3 +9,6 @@
 6. **Commits:**  seguindo Conventional Commits (ex: feat:, fix:, docs:).
 7. **Documentação:** Sempre inclua tratamento de erros (Try/Catch) e logs.
 8. **Dependencias** Sempre verifique a existencia de pacotes no requirements.txt, caso ao pacote não exista, adicione os ao documento
+9. **Documentação:** Sempre use documentation string para documentar um módulo, classe, função ou método
+10. **Testes:** Convenção de Nomenclatura padrão `Given_When_Then`
+11.

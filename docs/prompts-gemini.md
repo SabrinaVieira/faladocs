@@ -217,12 +217,28 @@ Sempre consulte o  **rules/global_rules.md** antes de sugerir algo, e matenha as
 
 test(services): add unit tests for rt04 text chunking
 
+
+
+
 ### 📄 Prompt 34
-Contexto e Objetivo: Estamos no desenvolvimento do MVP do FalaDocs. Sua tarefa é garantir a integridade do contrato **rt05_setup_supabase_client** através de testes unitários robustos.DIRETRIZES CRÍTICAS DE ARQUITETURA (Prioridade Máxima):Leitura Obrigatória: Antes de qualquer linha de código, você deve processar o arquivo **rules/global_rules.md** e o **rt01_setup_project_structure.md**. Suas sugestões devem ser 100% complacentes com esses documentos.Localização Estrita: Você está proibido de sugerir a criação de arquivos fora da estrutura definida. Testes unitários devem residir exclusivamente em **tests/unit/**[contexto_especifico]/. 
-Verifique a estrutura de pastas atual antes de propor o caminho.Padrão de Projeto: Siga rigorosamente os princípios de Clean Architecture. Separe os testes por contexto e responsabilidade (ex: domain, application, infrastructure).Requisitos Técnicos:Ferramental: Utilize pytest.Isolamento: Implemente mocks para todas as chamadas de rede ou dependências externas para garantir que o teste seja puramente unitário.Cobertura: Os testes devem validar todas as cláusulas e fluxos definidos no contrato **rt05_setup_supabase_client**.Entrega Esperada:Raciocínio: Explique os passos lógicos e como a estrutura escolhida respeita a Clean Architecture.Caminho do Arquivo: Indique explicitamente o caminho completo (ex: tests/unit/services/test_validador.py) antes do bloco de código.Código: Implementação dos testes seguindo as boas práticas de legibilidade e padrões do projeto.
+Contexto e Objetivo: Estamos no desenvolvimento do MVP do FalaDocs. Sua tarefa é garantir a integridade do contrato **rt05_setup_supabase_client** através de testes unitários robustos.
+DIRETRIZES CRÍTICAS DE ARQUITETURA (Prioridade Máxima):
+Leitura Obrigatória: Antes de qualquer linha de código, você deve processar o arquivo **rules/global_rules.md** e o **rt01_setup_project_structure.md**. Suas sugestões devem ser 100% complacentes com esses documentos.
+
+Localização 
+Estrita: Você está proibido de sugerir a criação de arquivos fora da estrutura definida. Testes unitários devem residir exclusivamente em **tests/unit/**[contexto_especifico]/. 
+Verifique a estrutura de pastas atual antes de propor o caminho.
+Padrão de Projeto: Siga rigorosamente os princípios de Clean Architecture.
+Separe os testes por contexto e responsabilidade (ex: domain, application, infrastructure).
+Requisitos Técnicos:
+Ferramental: Utilize pytest.Isolamento: Implemente mocks para todas as chamadas de rede ou dependências externas para garantir que o teste seja puramente unitário.
+
+Entrega Esperada:
+Raciocínio: Explique os passos lógicos e como a estrutura escolhida respeita a Clean Architecture.Caminho do Arquivo: Indique explicitamente o caminho completo (ex: tests/unit/services/test_validador.py) antes do bloco de código.
+Código: Implementação dos testes seguindo as boas práticas de legibilidade e padrões do projeto.
 
 ### 📄 Prompt 35
-o arquivo foi ciado no diretório incorreto
+o arquivo foi criado no diretório incorreto
 
 ### 📄 Prompt 36
 como rdar este teste com salvamento do resultado em um arquivo de log na pasta logs
@@ -243,16 +259,34 @@ Analise o test_results_test_supabase_client_20260501_112445.log me explique porq
 se eu rodar este teste agora irá dar erro, sim ou não
 
 ### 📄 Prompt
+Utilize conventional commites, e escreva um commit curto  (com no máx 60 caracteres) para o que fizemos desde o ultimo commit nesta branch
+test(infra): add unit tests for supabase client setup
 
 
 ### 📄 Prompt
+Objetivo: Implementar o cliente Supabase no arquivo **rt05_setup_supabase_client** para garantir que os testes unitários recém-criados passem com sucesso
+
+REGRAS DE OURO DE ARQUITETURA (Prioridade Absoluta):
+Consulta Obrigatória: Antes de gerar qualquer código, processe os arquivos **rules/global_rules.md**, **rt01_setup_project_structure.md** e o escopo do projeto FalaDocs.
+Clean Architecture: O cliente deve ser implementado como uma camada de Infrastructure ou External Service Adapter. Garanta a inversão de dependência se o contrato exigir.
+Localização Precisa: Verifique a estrutura de diretórios do projeto. Você deve indicar o caminho completo onde o arquivo será criado/editado (ex: src/infrastructure/database/supabase_client.py) antes de exibir o código.
+Padronização: Utilize as bibliotecas já definidas no projeto (Python, LangChain, Streamlit) conforme o setup do MVP.
+
+Requisitos da Implementação:
+A configuração deve ser resiliente e buscar credenciais via variáveis de ambiente (conforme boas práticas de segurança).
+O código deve ser modular e fácil de ser "mockado" em futuros testes de integração.
+
+Entrega Esperada:
+Caminho do Arquivo: Informe o diretório exato seguindo o padrão rt01.
+Raciocínio Técnico: Explique como a implementação satisfaz os requisitos do contrato e mantém a estrutura modular do FalaDocs.
+Código-Fonte: Implementação completa, limpa e comentada em Python.
 
 
 ### 📄 Prompt
-
+o arquivo foi criado no diretório incorreto
 
 ### 📄 Prompt
-
+Utilize conventional commites, e escreva um commit curto  (com no máx 60 caracteres) para o que fizemos desde o ultimo commit nesta branch
 
 ### 📄 Prompt
 

@@ -241,7 +241,7 @@ Código: Implementação dos testes seguindo as boas práticas de legibilidade e
 o arquivo foi criado no diretório incorreto
 
 ### 📄 Prompt 36
-como rdar este teste com salvamento do resultado em um arquivo de log na pasta logs
+como rodar este teste com salvamento do resultado em um arquivo de log na pasta logs
 pytest > logs/test_results_test_supabase_client_$(date +%Y%m%d_%H%M%S).log 2>&1
 
 
@@ -255,7 +255,7 @@ Analise o **test_results_test_supabase_client_20260501_111647.log** me explique 
 Analise o test_results_test_supabase_client_20260501_112445.log me explique porque o erro 'ImportError: cannot import name 'get_supabase_client' from 'src.infrastructure.database' ocorre
 
 ### 📄 Prompt
-(como rdar este teste com salvamento do resultado em um arquivo de log na pasta logs)
+(como rodar este teste com salvamento do resultado em um arquivo de log na pasta logs)
 se eu rodar este teste agora irá dar erro, sim ou não
 
 ### 📄 Prompt
@@ -288,11 +288,35 @@ o arquivo foi criado no diretório incorreto
 ### 📄 Prompt
 Utilize conventional commites, e escreva um commit curto  (com no máx 60 caracteres) para o que fizemos desde o ultimo commit nesta branch
 
+
+
+
+
+
+
+
 ### 📄 Prompt
+Contexto e Objetivo: Estamos no desenvolvimento do MVP do FalaDocs. Sua tarefa é garantir a integridade do contrato **rt06_vectorize_and_store** através de testes unitários robustos.
+DIRETRIZES CRÍTICAS DE ARQUITETURA (Prioridade Máxima):
+Leitura Obrigatória: Antes de qualquer linha de código, você deve processar o arquivo **rules/global_rules.md** e o **rt01_setup_project_structure.md**. Suas sugestões devem ser 100% complacentes com esses documentos.
+
+Localização 
+Estrita: Você está proibido de sugerir a criação de arquivos fora da estrutura definida. Testes unitários devem residir exclusivamente em **tests/unit/**[contexto_especifico]/. 
+Verifique a estrutura de pastas atual antes de propor o caminho.
+Padrão de Projeto: Siga rigorosamente os princípios de Clean Architecture.
+Separe os testes por contexto e responsabilidade (ex: domain, application, infrastructure).
+Requisitos Técnicos:
+Ferramental: Utilize pytest.Isolamento: Implemente mocks para todas as chamadas de rede ou dependências externas para garantir que o teste seja puramente unitário.
+
+Entrega Esperada:
+Raciocínio: Explique os passos lógicos e como a estrutura escolhida respeita a Clean Architecture.Caminho do Arquivo: Indique explicitamente o caminho completo (ex: tests/unit/services/test_validador.py) antes do bloco de código.
+Código: Implementação dos testes seguindo as boas práticas de legibilidade e padrões do projeto.
+
 
 
 ### 📄 Prompt
-
+(como rodar este teste com salvamento do resultado em um arquivo de log na pasta logs) se eu rodar este teste agora irá dar erro, sim ou não
+pytest tests/unit/services/test_vectorization_service.py > logs/test_results_vectorization_$(date +%Y%m%d_%H%M%S).log 2>&1
 
 ### 📄 Prompt
 

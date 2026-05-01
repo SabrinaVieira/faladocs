@@ -312,13 +312,112 @@ Entrega Esperada:
 Raciocínio: Explique os passos lógicos e como a estrutura escolhida respeita a Clean Architecture.Caminho do Arquivo: Indique explicitamente o caminho completo (ex: tests/unit/services/test_validador.py) antes do bloco de código.
 Código: Implementação dos testes seguindo as boas práticas de legibilidade e padrões do projeto.
 
-
-
 ### 📄 Prompt
 (como rodar este teste com salvamento do resultado em um arquivo de log na pasta logs) se eu rodar este teste agora irá dar erro, sim ou não
 pytest tests/unit/services/test_vectorization_service.py > logs/test_results_vectorization_$(date +%Y%m%d_%H%M%S).log 2>&1
 
 ### 📄 Prompt
+Utilize conventional commites, e escreva um commit curto  (com no máx 60 caracteres) para o que fizemos desde o ultimo commit nesta branch
+
+### 📄 Prompt
+Objetivo: Implementar o cliente Supabase no arquivo **rt06_vectorize_and_store** para garantir que os testes unitários recém-criados passem com sucesso
+
+REGRAS DE OURO DE ARQUITETURA (Prioridade Absoluta):
+Consulta Obrigatória: Antes de gerar qualquer código, processe os arquivos **rules/global_rules.md**, **rt01_setup_project_structure.md** e o escopo do projeto FalaDocs.
+Clean Architecture: O cliente deve ser implementado como uma camada de Infrastructure ou External Service Adapter. Garanta a inversão de dependência se o contrato exigir.
+Localização Precisa: Verifique a estrutura de diretórios do projeto. Você deve indicar o caminho completo onde o arquivo será criado/editado (ex: src/infrastructure/database/supabase_client.py) antes de exibir o código.
+Padronização: Utilize as bibliotecas já definidas no projeto (Python, LangChain, Streamlit) conforme o setup do MVP.
+
+Requisitos da Implementação:
+A configuração deve ser resiliente e buscar credenciais via variáveis de ambiente (conforme boas práticas de segurança).
+O código deve ser modular e fácil de ser "mockado" em futuros testes de integração.
+
+Entrega Esperada:
+Caminho do Arquivo: Informe o diretório exato seguindo o padrão rt01.
+Raciocínio Técnico: Explique como a implementação satisfaz os requisitos do contrato e mantém a estrutura modular do FalaDocs.
+Código-Fonte: Implementação completa, limpa e comentada em Python.
+
+### 📄 Prompt
+Analise o @test_results_vectorization_20260501_131239.log me explique porque o erro 'ERROR tests/unit/services/test_vectorization_service.py::test_embed_and_store_chunks_given_valid_chunks_when_called_then_succeeds ERROR tests/unit/services/test_vectorization_service.py::test_embed_and_store_chunks_given_embedding_fails_when_called_then_raises_embedding_error' ocorre
+
+### 📄 Prompt
+Mas o arquivo @vectorization_service.py já não foi implementado?
+
+
+### 📄 Prompt
+Implemente o `config.py` conforme a especificação `rt02_configure_environment_variables.md` para resolver o erro.
+
+
+### 📄 Prompt
+Analise o `test_results_vectorization_20260501_132959` me explique porque o erro "ERROR tests/unit/services/test_vectorization_service.py::test_embed_and_store_chunks_given_valid_chunks_when_called_then_succeeds
+ERROR tests/unit/services/test_vectorization_service.py::test_embed_and_store_chunks_given_embedding_fails_when_called_then_raises_" acontece
+
+### 📄 Prompt
+Analise o `test_results_vectorization_20260501_134314` me explique porque o erro "ERROR tests/unit/services/test_vectorization_service.py::test_embed_and_store_chunks_given_valid_chunks_when_called_then_succeeds
+ERROR tests/unit/services/test_vectorization_service.py::test_embed_and_store_chunks_given_embedding_fails_when_called_then_raises_embedding_error" acontece
+
+### 📄 Prompt
+Analise o `test_results_vectorization_20260501_135819` me explique porque o erro "  ValueError: @pytest.fixture is being applied more than once to the same function 'mock_settings'"
+
+
+### 📄 Prompt
+os erros continuam ocorrendo: ERROR at setup of test_embed_and_store_chunks_given_valid_chunks_when_called_then_succeeds _ file /home/sabrina/Documentos/faladocs/tests/unit/services/test_vectorization_service.py, line 33 def test_embed_and_store_chunks_given_valid_chunks_when_called_then_succeeds( file /home/sabrina/Documentos/faladocs/tests/unit/services/test_vectorization_service.py, line 14 @pytest.fixture def mock_dependencies(mocker): E fixture 'mocker' not found > available fixtures: anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, mock_dependencies, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, subtests, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory > use 'pytest --fixtures [testpath]' for help on them.
+
+/home/sabrina/Documentos/faladocs/tests/unit/services/test_vectorization_service.py:14 _ ERROR at setup of test_embed_and_store_chunks_given_embedding_fails_when_called_then_raises_embedding_error _ file /home/sabrina/Documentos/faladocs/tests/unit/services/test_vectorization_service.py, line 54 def test_embed_and_store_chunks_given_embedding_fails_when_called_then_raises_embedding_error( file /home/sabrina/Documentos/faladocs/tests/unit/services/test_vectorization_service.py, line 14 @pytest.fixture def mock_dependencies(mocker): E fixture 'mocker' not found > available fixtures: anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, mock_dependencies, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, subtests, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory > use 'pytest --fixtures [testpath]' for help on them.
+
+### 📄 Prompt
+adicione a dependencias a ´requirements´.txt
+
+
+### 📄 Prompt
+SEJA DIRETO
+
+não sei se voce ja reparou, mas voces esta sugerindo a mesma solução repetida vezes mesmo eu te informando que ja rodei numeras vezes a sua "Correção Definitiva: Higienização do Projeto" e o log de erros continua o mesmo ""ERROR src.services.vectorization_service:vectorization_service.py:46 Falha ao gerar embeddings ou armazenar vetores: AttributeError"
+
+"___ test_embed_and_store_chunks_given_valid_chunks_when_called_then_succeeds ___
+
+plaintext: 2 lines selected src/services/vectorization_service.py:34:
+
+raise AttributeError(f'{type(self).name!r} object has no attribute {item!r}') E AttributeError: 'AppSettings' object has no attribute 'google_api_key'
+
+venv/lib/python3.11/site-packages/pydantic/main.py:1042: AttributeError
+
+The above exception was the direct cause of the following exception:
+
+embed_and_store_chunks(chunks)
+
+tests/unit/services/test_vectorization_service.py:46: raise EmbeddingError("Falha ao gerar embeddings ou armazenar vetores.") from e E src.core.exceptions.EmbeddingError: Falha ao gerar embeddings ou armazenar vetores.
+
+src/services/vectorization_service.py:47: EmbeddingError ""
+
+### 📄 Prompt
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
 
 
 ### 📄 Prompt
@@ -327,4 +426,64 @@ pytest tests/unit/services/test_vectorization_service.py > logs/test_results_vec
 ### 📄 Prompt
 
 
+
 ### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+
+### 📄 Prompt
+
+
+
+

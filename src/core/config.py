@@ -14,13 +14,12 @@ class AppSettings(BaseSettings):
     SUPABASE_URL: str
     SUPABASE_KEY: str
 
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
+    model_config = SettingsConfigDict(
+        env_file=".env", env_file_encoding="utf-8", extra="ignore"
+    )
 
 
 @lru_cache
 def get_settings() -> AppSettings:
-    """
-    Retorna uma instância cacheada das configurações da aplicação.
-    A validação é feita automaticamente pelo Pydantic na instanciação.
-    """
+    """Retorna uma instância cacheada das configurações da aplicação."""
     return AppSettings()

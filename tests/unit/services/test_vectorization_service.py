@@ -13,7 +13,7 @@ from src.services.vectorization_service import embed_and_store_chunks
 
 @pytest.fixture
 def mock_dependencies(mocker):
-    """Fixture para mockar todas as dependências externas."""
+    """Fixture para mockar as dependências de infraestrutura e bibliotecas."""
     mock_get_supabase_client = mocker.patch(
         "src.services.vectorization_service.get_supabase_client"
     )
@@ -23,8 +23,6 @@ def mock_dependencies(mocker):
     mock_supabase_vector_store = mocker.patch(
         "src.services.vectorization_service.SupabaseVectorStore"
     )
-    mocker.patch("src.services.vectorization_service.config")
-
     return {
         "get_supabase_client": mock_get_supabase_client,
         "google_embeddings": mock_google_embeddings,
@@ -68,7 +66,7 @@ def test_embed_and_store_chunks_given_embedding_fails_when_called_then_raises_em
     )
 
     # Act & Assert
-    with pytest.raises(EmbeddingError, match="Falha ao gerar embeddings"):
+    with pytest.raises(EmbeddingError, match="Falha ao gerar embeddings ou armazenar vetores."):
         embed_and_store_chunks(chunks)
 
 

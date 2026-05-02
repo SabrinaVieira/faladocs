@@ -391,52 +391,97 @@ tests/unit/services/test_vectorization_service.py:46: raise EmbeddingError("Falh
 src/services/vectorization_service.py:47: EmbeddingError ""
 
 ### 📄 Prompt
+Atue como um Arquiteto de Software Sênior especializado em IA e infraestrutura de dados. Estamos na fase de infraestrutura do MVP do FalaDocs, um chatbot RAG desenvolvido com Python e LangChain. Atualmente, não possuímos os scripts DDL para o banco de dados vetorial.
+
+Objective (Objetivo):
+Gerar o script SQL completo para preparar o ambiente no Supabase. O script deve habilitar a extensão pgvector, criar a tabela documents (com suporte a metadados e vetores) e a função RPC match_documents necessária para a busca por similaridade de cosseno.
+
+Style (Estilo):
+Siga rigorosamente a documentação técnica da SupabaseVectorStore do LangChain. O código deve ser limpo, comentado e pronto para execução no SQL Editor do Supabase.
+
+Tone (Tom):
+Profissional, técnico e focado em boas práticas de segurança e performance de banco de dados.
+
+Audience (Público):
+Uma Analista de Sistemas sênior que realizará a execução manual no console do Supabase.
+
+Response (Resposta/Restrições):
+
+Regra de Ouro: Antes de sugerir, consulte rules/global_rules.md e mantenha a organização conforme rt01_setup_project_structure.md.
+
+Inclusão Obrigatória: O script deve incluir a criação de índices (HNSW ou IVFFlat) para otimizar a recuperação dos vetores.
+
+Explicação: Forneça uma breve explicação do raciocínio por trás da escolha dos tipos de dados (especialmente o tamanho das dimensões do vetor, considerando o uso de modelos de embedding modernos).
 
 ### 📄 Prompt
+eu fui no supabase executar: "Potential issue detected with your query Review the warnings below before running this query. The following potential issue has been detected: Ensure that these are intentional before executing this query
 
+New table will not have Row Level Security enabled Without RLS, any client using your project's anon or authenticated keys can read and write to documents. Enable RLS and add policies before exposing this table via the API. Learn more. Please confirm that you would like to execute this query."
 
-
-### 📄 Prompt
-
-
-
-### 📄 Prompt
-
-
-
-### 📄 Prompt
-
-
-
-### 📄 Prompt
-
-
-
-### 📄 Prompt
-
-
-
-### 📄 Prompt
-
-
-
-### 📄 Prompt
+gostaria de saber se devo ativa ro rls, se tem cuto
 
 
 ### 📄 Prompt
-
-
-
-### 📄 Prompt
-
+DA MANEIRA QUE QUE ESTA CONFIGURADA TODA A APLICAÇÃO E CÓDIGO, ESTOU RECEBENDO UMA "RESPOSTA SIMULADA AO REALIZAR O TESTE", QUANDO ESTOU FAZENDO O UPLOAD JA ESTA FAZENDO USO DO ENDPOINT QUE ENVIA O ARQUIVO PRO SUPABASE? E JA ESTA CONSIGO RECEBER RESPOSTASREAIS DO GEMINI?
 
 
 ### 📄 Prompt
+PROXIMOS PASSOS
+é conectar a interface do usuário aos serviços de backend p
 
+### 📄 Prompt
+Integre a lógica de extração de texto (RT03) e chunking (RT04) ao app.py quando um arquivo for enviado.
+
+gARANTA A conexão entre eles é a atividade implícita que une tudo: RF01 (Upload) precisa chamar RT03 (Extração), RT04 (Chunking) e RT06 (Vetorização). RF02 (Pergunta) precisa chamar RT07 (Busca) e RT08 (Chamada ao LLM). RF03 (Exibir Resposta) depende do resultado de todo o fluxo anterior.
+
+EXPLIQUE PASSO A PASSO DE O QUE, PORQUE E COMO DEVE SER FEITO
 
 
 ### 📄 Prompt
+AO REALIZAR AS ALTERAÇÕES SUGERIDAS POR VOCE,
 
+HOUVE UM ERRO NA RENDERIZAÇÃO NO NAVEGADOR: "ModuleNotFoundError: No module named 'src' Traceback: File "/home/sabrina/Documentos/faladocs/src/app.py", line 6, in <module> from src.core.exceptions import PDFProcessingError Copy Ask Google Ask ChatGPT"
+
+PORQUE A LINHA "6 from src.core.exceptions import PDFProcessingError" OCORRE ERROI
+
+
+### 📄 Prompt
+dEPOIS DE DE CORRIGIR EM
+
+ModuleNotFoundError: No module named 'src' Traceback: File "/home/sabrina/Documentos/faladocs/src/app.py", line 7, in <module> from services.document_service import chunk_text, extract_text_from_pdf File "/home/sabrina/Documentos/faladocs/src/services/document_service.py", line 9, in <module> from src.core.exceptions import PDFProcessingErrorrules ANALISE @exceptions, PDFProcessingError E CORIJA ISSO DE UMA VEZ
+
+
+### 📄 Prompt
+Utilize conventional commites, e escreva um commit curto  (com no máx 60 caracteres) para o que fizemos desde o ultimo commit nesta branch
+
+
+### 📄 Prompt
+Ao rodar o app.py, enviar o arquivo, e realizar uma pergunta recebo uma nova mensagem "Esta é uma resposta simulada. A integração com o LLM é o próximo passo.", o meu pdf esta sendo salvo no supabase? o que falta fazer? me explique passo a passo
+
+
+### 📄 Prompt
+Agora eu tenho o retorno de um erro diferente:
+
+"File "/home/sabrina/Documentos/faladocs/venv/lib/python3.11/site-packages/tenacity/init.py", line 473, in call result = fn(*args, **kwargs)
+
+File "/home/sabrina/Documentos/faladocs/venv/lib/python3.11/site-packages/google/genai/errors.py", line 184, in raise_error raise ClientError(status_code, response_json, response) google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/embedding-001 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+
+The above exception was the direct cause of the following exception: File "/home/sabrina/Documentos/faladocs/venv/lib/python3.11/site-packages/langchain_community/vectorstores/supabase.py", line 151, in from_texts embeddings = embedding.embed_documents(texts)
+
+langchain_google_genai._common.GoogleGenerativeAIError: Error embedding content (NOT_FOUND): 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/embedding-001 is not found for API version v1beta, or is not supported for embedContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}} "
+
+pporque ocorre o erro "GoogleGenerativeAIError: Error embedding content (NOT_FOUND): 404 NOT_FOUND. ", porque ele não encontra o modelo, aonde esta definido o mdelo ao qual deve se comunicad?
+
+
+### 📄 Prompt
+consegue verificar se todas as versões das bibliotecas são compativeis entre las, gostaria de versões estaveis e compativeis entre si
+verifique novamente a vesão das dependencias do projeto, garanta que voce escolheu as versões mais recentes disponiveis e estaveis na internet
+
+
+### 📄 Prompt
+Utilize conventional commites, e escreva um commit curto  (com no máx 60 caracteres) para o que fizemos desde o ultimo commit nesta branch
+
+git commit -m "fix(db): update schema to support 3072-dimension vectors"
 
 
 ### 📄 Prompt

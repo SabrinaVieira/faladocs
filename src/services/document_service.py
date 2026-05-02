@@ -6,7 +6,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from pypdf import PdfReader
 from pypdf.errors import PdfReadError
 
-from src.core.exceptions import PDFProcessingError
+from core.exceptions import PDFProcessingError
 
 logger = logging.getLogger(__name__)
 

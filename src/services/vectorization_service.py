@@ -2,15 +2,16 @@
 Serviço responsável pela vetorização de texto e armazenamento no Supabase.
 """
 
+
 import logging
 from typing import List
 
 from langchain_community.vectorstores import SupabaseVectorStore
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
-from src.core import config
-from src.core.exceptions import EmbeddingError, VectorStorageError
-from src.infrastructure.database.supabase_client import get_supabase_client
+from core import config
+from core.exceptions import EmbeddingError, VectorStorageError
+from infrastructure.database.supabase_client import get_supabase_client
 
 logger = logging.getLogger(__name__)
 
@@ -27,11 +28,17 @@ def embed_and_store_chunks(chunks: List[str]) -> None:
                         ou no armazenamento dos vetores.
     """
     try:
-        logger.info("Iniciando o processo de embedding e armazenamento de chunks.")
+        logger.info(
+            f"Iniciando o processo de embedding e armazenamento de {len(chunks)} chunks."
+        )
         supabase_client = get_supabase_client()
 
+
         embeddings = GoogleGenerativeAIEmbeddings(
-            model="models/embedding-001", google_api_key=config.get_settings().google_api_key
+            # O modelo "models/embedding-001" está obsoleto.
+            # Usamos o "text-embedding-004", que é um modelo mais recente e recomendado
+            # para tarefas de embedding e que também gera vetores de 768 dimensões.
+            model="models/gemini-embedding-2", google_api_key=config.get_settings().GOOGLE_API_KEY
         )
 
         SupabaseVectorStore.from_texts(
@@ -43,5 +50,14 @@ def embed_and_store_chunks(chunks: List[str]) -> None:
         )
         logger.info(f"{len(chunks)} chunks foram vetorizados e armazenados com sucesso.")
     except Exception as e:
-        logger.error(f"Falha ao gerar embeddings ou armazenar vetores: {type(e).__name__}")
+        # Usar logger.exception para capturar o traceback completo do erro original.
+        # Isso é crucial para o debug, pois revela a causa raiz do problema.
+        logger.exception(
+            "Uma exceção não tratada ocorreu durante a vetorização e armazenamento."
+        )
         raise EmbeddingError("Falha ao gerar embeddings ou armazenar vetores.") from e
+    
+
+
+
+

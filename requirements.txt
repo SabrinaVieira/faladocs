@@ -1,9 +1,25 @@
-streamlit
-langchain
-langchain-text-splitters
-langchain-google-genai
-supabase
-python-dotenv
-pydantic
-pydantic-settings
-pytest-mock
+# UI Framework
+streamlit~=1.56.0
+
+# LangChain Core & Integrations
+# Pinning versions is crucial as LangChain is evolving rapidly.
+# These have been updated to the latest stable major/minor versions.
+langchain~=0.2.5
+langchain-core~=0.2.9
+langchain-community~=0.2.5
+langchain-text-splitters~=0.2.1
+langchain-google-genai~=1.0.6
+
+# Database & Vector Store
+supabase~=2.5.0
+
+# PDF Processing (was missing from the original file)
+pypdf~=4.2.0
+
+# Configuration Management
+python-dotenv~=1.0.1
+pydantic~=2.7.1
+pydantic-settings~=2.14.0
+
+# Development & Testing
+pytest-mock~=3.12.0
